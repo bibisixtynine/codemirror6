@@ -3,6 +3,12 @@
 // 2. In this file, import the package using the ES6 import syntax, like so:
 import { EditorState, EditorView, basicSetup } from "@codemirror/basic-setup";
 import { javascript } from "@codemirror/lang-javascript";
+import { defaultHighlightStyle } from "@codemirror/highlight"
+import { bracketMatching } from "@codemirror/matchbrackets"
+
+import { Tone } from 'tone'
+
+console.log(Tone)
 
 // Some example code, you can delete me!
 
@@ -15,7 +21,7 @@ let initial_doc = `function hello(who = "world") {
 let editor = new EditorView({
   state: EditorState.create({
     doc: initial_doc,
-    extensions: [basicSetup, javascript()]
+    extensions: [basicSetup, javascript(), defaultHighlightStyle.fallback, bracketMatching()]
   }),
   parent: root
 });
