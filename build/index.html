@@ -2,14 +2,57 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <title>Karlito</title>
+
+    <meta
+      name="viewport"
+      content="viewport-fit=cover,user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    
+    
+    
+        <!------------------------------------------------>
+    <!-- PWA setup ----------------------------------->
+    <!------------------------------------------------>
+    
+    <!-- manifest -->
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- increase the compatibilty of the manifest for ios/windows...-->
+    <script
+      async
+      src="https://unpkg.com/pwacompat"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- service worker -->
+    <script>
+      if (location.protocol == "http:") location.protocol = "https:";
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then((reg) =>
+            console.log("+-> (1) 😍 Service Worker registered", reg)
+          )
+          .catch((err) =>
+            console.error("!!! (-) 🆘 Service Worker **not** registered", err)
+          );
+      } else {
+        console.warn("!!! (-) 🆘 Service Worker not supported in this browser");
+      }
+    </script>
+    <!------------------------------------------------>
+    
+
     <script type="module" src="js/index.js"></script>
-    <title>Hello, world!</title>
   </head>
   <body>
-    <h1>
-      Hello world!
-    </h1>
+    <h1>Hello world!</h1>
     <div id="root"></div>
   </body>
 </html>
-
