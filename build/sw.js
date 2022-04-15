@@ -13,7 +13,7 @@ self.addEventListener("install", e => {
       return cache.addAll([
         "/",
         "/js/index.js",
-//        "/styles.css",
+        "/js/index.css",
 //        "/jsui.js",
 //        "/zutils.js",
       ]);
