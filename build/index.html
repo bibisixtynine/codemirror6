@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Karlito</title>
-
+    <!------------------------------------------------>
+    <!-- ios meta setup ------------------------------>
+    <!------------------------------------------------>
     <meta
       name="viewport"
       content="viewport-fit=cover,user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
@@ -13,24 +15,19 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    
-    
-    
+
     <!------------------------------------------------>
     <!-- PWA setup ----------------------------------->
     <!------------------------------------------------>
-    
-    <!-- manifest -->
+    <!-- 1) manifest -->
     <link rel="manifest" href="manifest.json" />
-    
-    <!-- increase the compatibilty of the manifest for ios/windows...-->
+    <!-- 2) increase the compatibilty of the manifest for ios/windows...-->
     <script
       async
       src="https://unpkg.com/pwacompat"
       crossorigin="anonymous"
     ></script>
-
-    <!-- service worker -->
+    <!-- 3) service worker -->
     <script>
       if (location.protocol == "http:") location.protocol = "https:";
       if ("serviceWorker" in navigator) {
@@ -47,13 +44,14 @@
       }
     </script>
     <!------------------------------------------------>
-    
-
+    <!-- script & css (esbluid generated)------------->
+    <!------------------------------------------------>
     <script type="module" src="js/index.js"></script>
-    <link rel="stylesheet" href="js/index.css"/>
+    <link rel="stylesheet" href="js/index.css" />
   </head>
+
   <body>
-    <h1 style="color: orange; font-family:system-ui;">Hello world!</h1>
-    <div id="root"></div>
+    <h1 style="color: orange; font-family: system-ui">Hello world!</h1>
+    <div id="editor"></div>
   </body>
 </html>
