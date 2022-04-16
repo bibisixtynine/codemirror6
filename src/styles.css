@@ -1,18 +1,67 @@
 body {
   background-color: #282c34;
+  margin: 5px;
 }
 
 h1 {
+  display:none;
   color: salmon;
   font-family: system-ui;
 }
 
 #editor-container {
-  height: 50vh;
-  overflow: auto;
+  /*height: calc( 100vh - 14px ); 
+  overflow: auto;*/
   
-  border: solid;
+  /*border: dashed;
   border-color: salmon;
-  border-radius: 15px;
+  border-width: 2px;
+  border-radius: 30px;*/
 }
+
+.button {
+  font-family: system-ui;
+  font-weight: 600;
+  font-size: 14px;
+
+  border: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  border-color: ivory;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  vertical-align: center;
+}
+
+#button-run {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  background-color: orange;
+}
+
+#button-save {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: green;
+}
+
+#button-load {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: red;
+}
+
+#button-help {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  background-color: blue;
+}
+
+
 

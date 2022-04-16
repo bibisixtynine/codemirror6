@@ -12,11 +12,22 @@ let initial_doc = `function hello(who = "world") {
   console.log(\`Hello, \${who}!\`)
 }`;
 
+const fontTheme = EditorView.theme({
+  "&": {
+    fontSize: "10.5pt",
+  },
+  ".cm-content": {
+    fontFamily: "Menlo, Monaco, Lucida Console, monospace"
+  }
+});
 
 let editor = new EditorView({
   state: EditorState.create({
     doc: initial_doc,
-    extensions: [oneDark, basicSetup, javascript(), defaultHighlightStyle.fallback, bracketMatching()]
+    extensions: [ oneDark, fontTheme, basicSetup, javascript(), defaultHighlightStyle.fallback, bracketMatching()]
   }),
   parent: editorDiv
 });
+
+
+
