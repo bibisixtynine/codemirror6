@@ -6,11 +6,11 @@ import { oneDark } from "@codemirror/theme-one-dark"
 
 import "./styles.css"
 
+import {codeExample} from "./codeexample.js"
+
 let editorDiv = document.querySelector("#editor");
 
-let initial_doc = `function hello(who = "world") {
-  console.log(\`Hello, \${who}!\`)
-}`;
+let initial_doc = codeExample
 
 const fontTheme = EditorView.theme({
   "&": {
